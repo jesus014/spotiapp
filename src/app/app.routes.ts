@@ -5,8 +5,8 @@ import { SearchComponent } from './components/search/search.component';
 
 
 export const ROUTES:Routes=[
-
-  {path: 'home', component: HomeComponent},
+//configuracion de las rutas para el uso de las mismas en el proyecto
+  {path: 'home', component: HomeComponent}, //ruta para el home
   {path: 'search', component: SearchComponent},
   {path: '', pathMatch:'full', redirectTo:'home'},
   {path: '**', pathMatch:'full', redirectTo:'home'},
