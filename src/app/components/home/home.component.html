@@ -1,8 +1,8 @@
-<!--se realiza el muestreo de imagenes atraves de la api que se realizo el consumo en home-->>
+<!--se realiza el muestreo de imagenes atraves de la api que se realizo el consumo en home
 <div class="card-columns">
 
   <div  *ngFor="let cancion of nuevasCanciones" class="card">
-    <img [src]="cancion.images[0].url" class="card-img-top" alt="...">
+    <img [src]="cancion.images | noimages" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">{{cancion.name}} </h5>
       <p class="card-text">
@@ -13,3 +13,10 @@
     </div>
   </div>
 </div>
+-->>
+
+<app-loading *ngIf="loading"></app-loading>
+
+<!-- se implementa el tarjetero pasando de items el valor anterior que era nuevas canciones -->>
+
+<app-tarjetas [items] ="nuevasCanciones"></app-tarjetas>

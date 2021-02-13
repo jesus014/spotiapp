@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from '../../services/spotify.service';
+import { logging } from 'protractor';
 
 @Component({
   selector: 'app-home',
@@ -14,8 +15,11 @@ export class HomeComponent implements OnInit {
   paises: any []=[];
 
   nuevasCanciones: any []=[];
+  loading:boolean;
+
   constructor(private spotify: SpotifyService) {
 
+    this.loading=true;
     //this.http.get('https://api.covid19api.com/country/Argentina/status/confirmed?from=2020-12-01T00:00:00Z&to=2021-02-01T00:00:00Z')
     //.subscribe((res:any) =>{
       //  this.paises=res;
@@ -25,11 +29,14 @@ export class HomeComponent implements OnInit {
    //dicho archivo
     this.spotify.getNewReleases()
       .subscribe((data:any) => {
-        console.log(data.albums.items);
-        this.nuevasCanciones=data.albums.items;
+        this.nuevasCanciones=data;
+        this.loading=false;
       });
 
   }
+
+
+
 
   ngOnInit(): void {
   }
