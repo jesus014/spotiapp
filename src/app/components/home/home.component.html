@@ -16,7 +16,12 @@
 -->>
 
 <app-loading *ngIf="loading"></app-loading>
-
+<div *ngIf="error" class="alert alert-danger animated fadeIn">
+  <h3>Error</h3>
+  <p>
+    {{mensajeError}}
+  </p>
+</div>
 <!-- se implementa el tarjetero pasando de items el valor anterior que era nuevas canciones -->>
 
 <app-tarjetas [items] ="nuevasCanciones"></app-tarjetas>
