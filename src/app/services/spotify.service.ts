@@ -67,4 +67,18 @@ export class SpotifyService {
                  //.pipe(map(data=> data['artists'].items));
     }
 
+    getTopTracks(id:string){
+
+      return this.getQuery(`artists/${ id }/top-tracks?country=us`)
+
+      .pipe(map(data=> data['tracks']));
+
+                 // const headers = new HttpHeaders({
+                //  'Authorization': 'Bearer BQAevXwAFmgvr9AIsUKYfxmuOmobMXf6UOwACpO7jETirLZRP437Nw3t2gEfNiSKZezFAVl_yw1gWXwLaQg'
+                //});
+         //peticicion ya realizada  siendo headers un parametro de autorizacion para el uso
+                 //return this.http.get(`https://api.spotify.com/v1/search?q=${termino}&type=track%2Cartist&market=US&limit=15&offset=5`,{headers})
+                 //.pipe(map(data=> data['artists'].items));
+    }
+
 }
