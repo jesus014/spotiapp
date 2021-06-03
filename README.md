@@ -8,4 +8,4 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Funcionalidad
 
-Esta aplicacion fue desarrollada para aprender y desarrollar conceptos de angular, consumiendo un servicio de spotify. 
+Esta aplicacion fue desarrollada de modo de aprendizaje y desarrollar conceptos de angular, consumiendo un servicio de spotify. 
